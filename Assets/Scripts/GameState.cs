@@ -23,6 +23,7 @@ public class GameState : MonoBehaviour
         {
             actions[0].PerformAction();
             actions.RemoveAt(0);
+            GameProgress.NextProgress();
         }
     }
 }
