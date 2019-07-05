@@ -6,7 +6,7 @@ using System.Collections;
 public class PlatformControl : EventHandle
 {
     [SerializeField]
-    private Animator towersAnim;
+    private Animator towersAnim = null;
     private Animator platformAnim;
     [SerializeField]
     private List<Collider> blocks = null;

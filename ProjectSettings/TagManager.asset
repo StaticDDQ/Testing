@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BellTower
   - Bell
+  - Portal
   layers:
   - Default
   - TransparentFX

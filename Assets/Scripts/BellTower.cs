@@ -12,6 +12,7 @@ public class BellTower : MonoBehaviour
     {
         if (!isNotified)
         {
+            this.tag = "Untagged";
             lightRender.material = selectMat;
             GameState.instance.Notify();
             isNotified = true;

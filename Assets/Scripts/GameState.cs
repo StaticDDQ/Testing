@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
     [SerializeField]
-    private List<EventHandle> actions;
+    private List<EventHandle> actions = null;
     public static GameState instance;
 
     // Start is called before the first frame update
