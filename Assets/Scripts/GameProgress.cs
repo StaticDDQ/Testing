@@ -4,6 +4,7 @@ public static class GameProgress
 {
     private static Vector3 pos;
     private static Vector3 rot;
+    private static bool clearStage = false;
 
     private static int progress = 0;
     
@@ -35,5 +36,15 @@ public static class GameProgress
     public static Vector3 GetRot()
     {
         return rot;
+    }
+
+    public static void ClearedStage(bool hasCleared)
+    {
+        clearStage = hasCleared;
+    }
+
+    public static bool GetClearState()
+    {
+        return clearStage;
     }
 }

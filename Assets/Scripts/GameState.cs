@@ -6,8 +6,6 @@ public class GameState : MonoBehaviour
 {
     [SerializeField]
     private List<EventHandle> actions = null;
-    [SerializeField]
-    private Animator towersAnim = null;
     public static GameState instance;
 
     // Start is called before the first frame update
@@ -17,11 +15,6 @@ public class GameState : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-
-        if(GameProgress.GetProgress() > 0)
-        {
-            towersAnim.Play("StartEmerge");
-        }
     }
 
     public void Notify()
