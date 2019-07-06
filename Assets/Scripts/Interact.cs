@@ -9,7 +9,7 @@ public class Interact : MonoBehaviour
     {
         RaycastHit hit;
 
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward),out hit, dist))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, dist))
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -22,6 +22,6 @@ public class Interact : MonoBehaviour
                     hit.transform.GetComponent<PortalPath>().LoadPath();
                 }
             }
-        }     
+        }
     }
 }

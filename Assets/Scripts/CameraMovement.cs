@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class CameraMovement : MonoBehaviour {
@@ -93,7 +92,7 @@ public class CameraMovement : MonoBehaviour {
             Quaternion xQuaternion = Quaternion.AngleAxis(rotAverageX, Vector3.up);
             transform.localRotation = originalRotation * xQuaternion;
         }
-        else
+        else if(axes == RotationAxes.MouseY)
         {
             rotAverageY = 0f;
 
@@ -121,6 +120,11 @@ public class CameraMovement : MonoBehaviour {
     void Start()
     {
         originalRotation = transform.localRotation;
+    }
+
+    public void SetOriginal(Quaternion newRot)
+    {
+        originalRotation = newRot;
     }
 
     public static float ClampAngle(float angle, float min, float max)

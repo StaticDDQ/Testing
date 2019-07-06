@@ -1,6 +1,10 @@
-﻿
+﻿using UnityEngine;
+
 public static class GameProgress 
 {
+    private static Vector3 pos;
+    private static Vector3 rot;
+
     private static int progress = 0;
     
     public static void NextProgress()
@@ -11,5 +15,25 @@ public static class GameProgress
     public static int GetProgress()
     {
         return progress;
+    }
+
+    public static void SetPos(Vector3 newPos)
+    {
+        pos = newPos;
+    }
+
+    public static void SetRot(Vector3 newRot)
+    {
+        rot = newRot;
+    }
+
+    public static Vector3 GetPos()
+    {
+        return pos;
+    }
+
+    public static Vector3 GetRot()
+    {
+        return rot;
     }
 }
