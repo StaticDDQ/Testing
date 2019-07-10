@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GameState : MonoBehaviour
@@ -23,7 +22,6 @@ public class GameState : MonoBehaviour
         {
             actions[0].PerformAction();
             actions.RemoveAt(0);
-            GameProgress.NextProgress();
         }
     }
 }

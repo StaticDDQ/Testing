@@ -175,7 +175,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5b38b12c05683bd409da22d9ecbc4209,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5b38b12c05683bd409da22d9ecbc4209,
         type: 3}
@@ -318,16 +318,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stairsAnim:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  portals:
-  - {fileID: 658806702}
-  - {fileID: 849350116}
-  - {fileID: 102974982}
-  - {fileID: 138532173}
+  - {fileID: 59836521}
+  - {fileID: 165690716}
+  - {fileID: 1579934684}
+  - {fileID: 1465909925}
   towersAnim: {fileID: 985759900}
+  portals:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  control: {fileID: 1825345512}
 --- !u!1 &102974982
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +588,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b2ae66b1efae7e744bf61f36dfc154f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b2ae66b1efae7e744bf61f36dfc154f0,
         type: 3}
@@ -743,7 +745,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.52e-43, y: 9.146269e-35, z: 6.52e-43, w: 1.3563156e-19}
+  m_BoundingSphereOverride: {x: 4.5904e-41, y: 0, z: 0, w: 2e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -772,7 +774,7 @@ GameObject:
   - component: {fileID: 303085694}
   - component: {fileID: 303085695}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Block1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1195,10 +1197,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1333758406}
-  - {fileID: 1465909927}
-  - {fileID: 1579934686}
-  - {fileID: 165690718}
   - {fileID: 59836523}
+  - {fileID: 165690718}
+  - {fileID: 1579934686}
+  - {fileID: 1465909927}
   - {fileID: 1071181639}
   - {fileID: 416352612}
   - {fileID: 170076735}
@@ -1223,7 +1225,7 @@ GameObject:
   - component: {fileID: 788152232}
   - component: {fileID: 788152233}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Block2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1819,12 +1821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b4e100330a47342a1fffa245c005fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towersAnim: {fileID: 985759900}
-  blocks:
-  - {fileID: 958090748}
-  - {fileID: 303085695}
-  - {fileID: 788152233}
-  - {fileID: 2050107394}
+  homeControl: {fileID: 92157397}
 --- !u!1 &1113789126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,7 +2332,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: c534c8f08c375e44bb7c5af4befabed9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c534c8f08c375e44bb7c5af4befabed9,
         type: 3}
@@ -2479,7 +2476,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 860f1a793a3b9ce4c91c967437d6a76f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 860f1a793a3b9ce4c91c967437d6a76f,
         type: 3}
@@ -2663,6 +2660,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1825345512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5874831555963202781, guid: 43681eba48271a14dae5c7d56d4bfe6e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5874831556583086396}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ef6c1493c41d540ac9aee0af97fb8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1856537317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3161,7 +3170,7 @@ GameObject:
   - component: {fileID: 2050107393}
   - component: {fileID: 2050107394}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Block3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3436,12 +3445,12 @@ PrefabInstance:
     - target: {fileID: 7274886971259648918, guid: 2059d3e12b866bb4aa688b7566c77e94,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7274886971259648918, guid: 2059d3e12b866bb4aa688b7566c77e94,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7274886971259648918, guid: 2059d3e12b866bb4aa688b7566c77e94,
         type: 3}

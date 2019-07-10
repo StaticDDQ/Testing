@@ -82,9 +82,14 @@ public class SceneFade: MonoBehaviour {
         Quaternion newRot = Quaternion.Euler(GameProgress.GetRot() + new Vector3(0f, 180f, 0f));
 
         player.GetChild(0).GetComponent<CameraMovement>().SetOriginal(newRot);
-        player.GetChild(0).localRotation = newRot;
+        player.GetChild(0).localRotation = newRot; 
         player.position = GameProgress.GetPos();
 
         fadeAnim.Play("fadeOut");
+    }
+
+    public void Blink()
+    {
+        fadeAnim.Play("fadeBlink",-1,0f);
     }
 }
