@@ -24,7 +24,6 @@ public class CameraMovement : MonoBehaviour {
     float rotAverageY = 0F;
 
     public float frameCounter = 20;
-
     Quaternion originalRotation;
 
     void Update()
@@ -117,14 +116,9 @@ public class CameraMovement : MonoBehaviour {
         }
     }
 
-    void Start()
+    private void Start()
     {
-        originalRotation = transform.localRotation;
-    }
-
-    public void SetOriginal(Quaternion newRot)
-    {
-        originalRotation = newRot;
+        originalRotation = Quaternion.Euler(0,GameProgress.GetRot(),0);
     }
 
     public static float ClampAngle(float angle, float min, float max)

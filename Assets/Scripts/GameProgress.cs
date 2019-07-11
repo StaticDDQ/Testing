@@ -2,8 +2,8 @@
 
 public static class GameProgress 
 {
-    private static Vector3 pos;
-    private static Vector3 rot;
+    private static Vector3 pos = Vector3.zero;
+    private static float rot = 0;
     private static bool clearStage = false;
 
     private static int progress = 0;
@@ -23,7 +23,7 @@ public static class GameProgress
         pos = newPos;
     }
 
-    public static void SetRot(Vector3 newRot)
+    public static void SetRot(float newRot)
     {
         rot = newRot;
     }
@@ -33,7 +33,7 @@ public static class GameProgress
         return pos;
     }
 
-    public static Vector3 GetRot()
+    public static float GetRot()
     {
         return rot;
     }

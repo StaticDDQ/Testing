@@ -9,9 +9,11 @@ public class HomeControl : MonoBehaviour
     [SerializeField]
     private Animator towersAnim = null;
     [SerializeField]
-    private GameObject[] portals = null;
+    private GameObject[] portals;
     [SerializeField]
     private PlayerControl control;
+    [SerializeField]
+    private GameObject elevator = null;
 
     // Start is called before the first frame update
     private void Start()
@@ -20,10 +22,12 @@ public class HomeControl : MonoBehaviour
 
         if (currState > 0)
         {
-            towersAnim.Play("StartEmerge");
+            towersAnim.Play("StartEmerge" + currState);
 
-            if (GameProgress.GetClearState())
-                StartCoroutine(AnimateStairs(currState-1));
+            if (GameProgress.GetClearState() && currState < 5)
+                StartCoroutine(AnimateStairs(currState - 1));
+            else if (GameProgress.GetClearState() && currState == 5)
+                StartCoroutine(EnableElevator());
 
             for (int i = 0; i < currState; i++)
             {
@@ -48,6 +52,13 @@ public class HomeControl : MonoBehaviour
         GameProgress.ClearedStage(false);
 
         StartCoroutine(DisplayPortal(index));
+    }
+
+    private IEnumerator EnableElevator()
+    {
+        yield return null;
+        elevator.GetComponent<Animator>().Play("ElevatorEnabled");
+        GameProgress.ClearedStage(false);
     }
 
     private IEnumerator DisplayPortal(int index)

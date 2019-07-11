@@ -39,7 +39,7 @@ public class SceneFade: MonoBehaviour {
             PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
 
             GameProgress.SetPos(player.position);
-            GameProgress.SetRot(player.GetChild(0).eulerAngles);
+            GameProgress.SetRot(player.GetChild(0).eulerAngles.y + 180f);
             player.GetComponent<PlayerControl>().enabled = false;
 
             StartCoroutine(LoadLevel(level));
@@ -79,10 +79,6 @@ public class SceneFade: MonoBehaviour {
 
         AssignVariables();
 
-        Quaternion newRot = Quaternion.Euler(GameProgress.GetRot() + new Vector3(0f, 180f, 0f));
-
-        player.GetChild(0).GetComponent<CameraMovement>().SetOriginal(newRot);
-        player.GetChild(0).localRotation = newRot; 
         player.position = GameProgress.GetPos();
 
         fadeAnim.Play("fadeOut");
