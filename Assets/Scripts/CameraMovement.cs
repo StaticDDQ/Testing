@@ -118,6 +118,7 @@ public class CameraMovement : MonoBehaviour {
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         originalRotation = Quaternion.Euler(0,GameProgress.GetRot(),0);
     }
 

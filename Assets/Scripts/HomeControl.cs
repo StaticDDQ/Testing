@@ -56,9 +56,12 @@ public class HomeControl : MonoBehaviour
 
     private IEnumerator EnableElevator()
     {
-        yield return null;
+        yield return new WaitForSeconds(1);
+        control.enabled = false;
         elevator.GetComponent<Animator>().Play("ElevatorEnabled");
         GameProgress.ClearedStage(false);
+        yield return new WaitForSeconds(7);
+        control.enabled = true;
     }
 
     private IEnumerator DisplayPortal(int index)

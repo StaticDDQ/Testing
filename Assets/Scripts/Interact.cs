@@ -21,6 +21,14 @@ public class Interact : MonoBehaviour
                 {
                     hit.transform.GetComponent<PortalPath>().LoadPath();
                 }
+                else if (hit.transform.tag == "Shard")
+                {
+                    hit.transform.GetComponent<ElevatorShard>().UseElevator();
+                }
+                else if(hit.transform.tag == "Button")
+                {
+                    hit.transform.GetComponent<ButtonPress>().PressButton();
+                }
             }
         }
     }
