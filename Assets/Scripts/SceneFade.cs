@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class SceneFade: MonoBehaviour {
 
@@ -40,7 +41,7 @@ public class SceneFade: MonoBehaviour {
 
             GameProgress.SetPos(player.position);
             GameProgress.SetRot(player.GetChild(0).eulerAngles.y + 180f);
-            player.GetComponent<PlayerControl>().enabled = false;
+            player.GetComponent<RigidbodyFirstPersonController>().enabled = false;
 
             StartCoroutine(LoadLevel(level));
         }

@@ -2,8 +2,8 @@
 
 public class ButtonPress : MonoBehaviour
 {
-    [SerializeField] private Interactable interactEvent;
-    [SerializeField] private Material selectMat;
+    [SerializeField] private Interactable interactEvent = null;
+    [SerializeField] private Material selectMat = null;
     [SerializeField] private bool pressOnce = false;
     private bool isSelected = false;
     private Material currMat;

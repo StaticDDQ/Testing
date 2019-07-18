@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using EZCameraShake;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class HomeControl : MonoBehaviour
 {
@@ -9,9 +10,9 @@ public class HomeControl : MonoBehaviour
     [SerializeField]
     private Animator towersAnim = null;
     [SerializeField]
-    private GameObject[] portals;
+    private GameObject[] portals = null;
     [SerializeField]
-    private PlayerControl control;
+    private RigidbodyFirstPersonController control = null;
     [SerializeField]
     private GameObject elevator = null;
 

@@ -5,7 +5,7 @@ public class PlatformControl : EventHandle
 {
     private Animator platformAnim;
     [SerializeField]
-    private HomeControl homeControl;
+    private HomeControl homeControl = null;
 
     // Start is called before the first frame update
     void Start()
