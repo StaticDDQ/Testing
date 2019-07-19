@@ -4,6 +4,9 @@ public class Blink : MonoBehaviour
 {
     private RaycastHit hit;
     [SerializeField] private float range = 20f;
+    [SerializeField] private float cooldown = 10f;
+    private bool canBlink = true;
+    private float cdElapsed = 0;
 
     private GameObject GetLookedAtObject()
     {
@@ -25,11 +28,22 @@ public class Blink : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (canBlink && Input.GetKeyDown(KeyCode.F))
         {
             if(GetLookedAtObject() != null)
             {
                 Teleport();
+                canBlink = false;
+                cdElapsed = cooldown;
+            }
+        }
+
+        if (!canBlink)
+        {
+            cdElapsed -= Time.deltaTime;
+            if (cdElapsed <= 0)
+            {
+                canBlink = true;
             }
         }
     }
