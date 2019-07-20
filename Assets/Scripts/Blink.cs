@@ -1,25 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Blink : MonoBehaviour
 {
     private RaycastHit hit;
     [SerializeField] private float range = 20f;
     [SerializeField] private float cooldown = 10f;
+    [SerializeField] private Image cdBar = null;
+    [SerializeField] private Transform indicate = null;
+    [SerializeField] private float rotateSpeed = 50f;
     private bool canBlink = true;
     private float cdElapsed = 0;
-
-    private GameObject GetLookedAtObject()
-    {
-        Vector3 origin = transform.position;
-        Vector3 dir = Camera.main.transform.forward;
-        if(Physics.Raycast(origin, dir, out hit, range) && hit.transform.tag == "Ground")
-        {
-            return hit.collider.gameObject;
-        } else
-        {
-            return null;
-        }
-    }
 
     private void Teleport()
     {
@@ -28,19 +19,30 @@ public class Blink : MonoBehaviour
 
     private void Update()
     {
-        if (canBlink && Input.GetKeyDown(KeyCode.F))
+        if (canBlink)
         {
-            if(GetLookedAtObject() != null)
+            if(Physics.Raycast(transform.position, Camera.main.transform.forward, out hit, range) && hit.transform.tag == "Ground")
             {
-                Teleport();
-                canBlink = false;
-                cdElapsed = cooldown;
-            }
+                indicate.Rotate(0, 0, rotateSpeed * Time.deltaTime);
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    Teleport();
+                    canBlink = false;
+                    cdElapsed = cooldown;
+                    cdBar.fillAmount = 0;
+                    indicate.rotation = Quaternion.identity;
+                }
+            } else
+            {
+                indicate.rotation = Quaternion.identity;
+            }             
         }
 
         if (!canBlink)
         {
             cdElapsed -= Time.deltaTime;
+            cdBar.fillAmount = 1 - cdElapsed / cooldown;
             if (cdElapsed <= 0)
             {
                 canBlink = true;
