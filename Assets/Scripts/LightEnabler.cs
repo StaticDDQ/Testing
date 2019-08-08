@@ -26,4 +26,9 @@ public class LightEnabler : MonoBehaviour
             ConditionEvent.instance.DecompleteEvent();
         }
     }
+
+    public bool GetIsEnabled()
+    {
+        return this.isEnabled;
+    }
 }
