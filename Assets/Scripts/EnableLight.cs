@@ -2,29 +2,19 @@
 
 public class EnableLight : Interactable
 {
-    [SerializeField] private LightEnabler[] lights = null;
-    [SerializeField] private bool checkAll = false;
+    [SerializeField] private LightEnabler[] lightsOn = null;
+    [SerializeField] private LightEnabler[] lightsOff = null;
 
     public override void ExecuteEvent()
     {
-        if (checkAll)
+        foreach (LightEnabler le in lightsOn)
         {
-            bool atleast1 = false;
-            foreach(LightEnabler le in lights)
-            {
-                if (le.GetIsEnabled())
-                {
-                    atleast1 = true;
-                    break;
-                }
-            }
-            if (!atleast1)
-                return;
+            le.TurnOn();
         }
 
-        foreach(LightEnabler le in lights)
+        foreach (LightEnabler le in lightsOff)
         {
-            le.SwitchControl();
+            le.TurnOff();
         }
     }
 }

@@ -7,6 +7,7 @@ public static class GameProgress
     private static bool clearStage = false;
 
     private static int progress = 0;
+    private static bool paused = false;
     
     public static void NextProgress()
     {
@@ -46,5 +47,15 @@ public static class GameProgress
     public static bool GetClearState()
     {
         return clearStage;
+    }
+
+    public static void SetPaused(bool isPaused)
+    {
+        paused = isPaused;
+    }
+    
+    public static bool GetPaused()
+    {
+        return paused;
     }
 }

@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class SceneFade: MonoBehaviour {
 
     public static SceneFade instance;
-    [SerializeField] private Animator fadeAnim;
+    private Animator fadeAnim;
     [SerializeField] private Transform player;
 
     // There is only one instance of this and will appear in every scene
@@ -29,7 +29,7 @@ public class SceneFade: MonoBehaviour {
     private void AssignVariables()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        fadeAnim = GameObject.FindGameObjectWithTag("FadeScreen").GetComponent<Animator>();
+        fadeAnim = transform.GetChild(0).GetComponent<Animator>();
     }
 
     // when the player wants to load a level

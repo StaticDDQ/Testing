@@ -25,11 +25,11 @@ public class Zoom : MonoBehaviour
 
         if (zoomed)
         {
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, zoomAmnt, Time.deltaTime * smooth);
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, zoomAmnt, Time.unscaledDeltaTime * smooth);
         }
         else
         {
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, normalAmnt, Time.deltaTime * smooth);
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, normalAmnt, Time.unscaledDeltaTime * smooth);
         }
     }
 }

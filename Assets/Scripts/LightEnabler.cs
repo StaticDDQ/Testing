@@ -13,15 +13,21 @@ public class LightEnabler : MonoBehaviour
         currMat = mr.material;
     }
 
-    public void SwitchControl()
+    public void TurnOn()
     {
-        isEnabled = !isEnabled;
-        if (isEnabled)
+        if (!isEnabled)
         {
+            isEnabled = true;
             mr.material = newMat;
             ConditionEvent.instance.CompleteEvent();
-        } else
+        }
+    }
+
+    public void TurnOff()
+    {
+        if (isEnabled)
         {
+            isEnabled = false;
             mr.material = currMat;
             ConditionEvent.instance.DecompleteEvent();
         }

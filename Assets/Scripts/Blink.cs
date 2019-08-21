@@ -23,7 +23,7 @@ public class Blink : MonoBehaviour
         {
             if(Physics.Raycast(transform.position, Camera.main.transform.forward, out hit, range) && hit.transform.tag == "Ground")
             {
-                indicate.Rotate(0, 0, rotateSpeed * Time.deltaTime);
+                indicate.Rotate(0, 0, rotateSpeed * Time.unscaledDeltaTime);
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {
@@ -41,7 +41,7 @@ public class Blink : MonoBehaviour
 
         if (!canBlink)
         {
-            cdElapsed -= Time.deltaTime;
+            cdElapsed -= Time.unscaledDeltaTime;
             cdBar.fillAmount = 1 - cdElapsed / cooldown;
             if (cdElapsed <= 0)
             {
