@@ -8,7 +8,7 @@ public class Pause : MonoBehaviour
 
     private void Start()
     {
-        pauseScreen = transform.GetChild(1).gameObject;
+        pauseScreen = transform.GetChild(transform.childCount - 1).gameObject;
     }
 
     // Update is called once per frame

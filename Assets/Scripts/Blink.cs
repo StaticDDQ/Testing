@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Blink : MonoBehaviour
 {
     private RaycastHit hit;
+    [SerializeField] private float offset = 1.5f;
     [SerializeField] private float range = 20f;
     [SerializeField] private float cooldown = 10f;
     [SerializeField] private Image cdBar = null;
@@ -14,7 +15,7 @@ public class Blink : MonoBehaviour
 
     private void Teleport()
     {
-        transform.parent.position = hit.point + hit.normal * 1.5f;
+        transform.parent.position = hit.point + hit.normal * offset;
     }
 
     private void Update()

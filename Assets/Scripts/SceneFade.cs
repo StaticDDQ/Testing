@@ -22,8 +22,6 @@ public class SceneFade: MonoBehaviour {
             Destroy(gameObject);
             return;
         }
-
-        DontDestroyOnLoad(this.gameObject);
     }
 
     private void AssignVariables()
