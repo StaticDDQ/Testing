@@ -3,7 +3,6 @@
 public class ButtonPress : MonoBehaviour
 {
     [SerializeField] private Interactable interactEvent = null;
-    [SerializeField] private Material selectMat = null;
     [SerializeField] private bool pressOnce = false;
     private bool isSelected = false;
     private Material currMat;
@@ -17,19 +16,12 @@ public class ButtonPress : MonoBehaviour
     {
         if ((pressOnce && !isSelected) || !pressOnce)
         {
+            transform.parent.GetComponent<Animator>().Play("buttonPress", -1, 0f);
+
             if(interactEvent != null)
                 interactEvent.ExecuteEvent();
 
             isSelected = !isSelected;
-
-            if (isSelected)
-            {
-                GetComponent<MeshRenderer>().material = selectMat;
-            }
-            else
-            {
-                GetComponent<MeshRenderer>().material = currMat;
-            }
         }
     }
 }

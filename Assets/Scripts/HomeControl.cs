@@ -12,7 +12,7 @@ public class HomeControl : MonoBehaviour
     [SerializeField]
     private GameObject[] portals = null;
     [SerializeField]
-    private RigidbodyFirstPersonController control = null;
+    private CharacterMovement control = null;
     [SerializeField]
     private GameObject elevator = null;
 
