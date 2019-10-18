@@ -2,7 +2,7 @@
 
 public class PuzzleOrder : MonoBehaviour
 {
-    [SerializeField] int[] correctOrder = null;
+    [SerializeField] private int[] correctOrder = null;
     [SerializeField] private Animator triggerAnim = null;
     private int counter = 0;
     private bool isFinished = false;

@@ -6,7 +6,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class CharacterMovement : MonoBehaviour
     {
         public float normalSpeed = 5f;
-        public float JumpHeight = 2f;
         public float Gravity = -9.81f;
         public float dashSpeed = 5f;
 
@@ -53,10 +52,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 _controller.Move(move * Time.unscaledDeltaTime * speedChange);
 
-                if (Input.GetButtonDown("Jump") && IsGrounded())
-                {
-                    _velocity.y += Mathf.Sqrt(JumpHeight * -2f * Gravity);
-                }
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
                     speedChange = dashSpeed;

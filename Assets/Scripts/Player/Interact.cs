@@ -19,7 +19,7 @@ public class Interact : MonoBehaviour
                 }
                 else if (hit.transform.tag == "Portal")
                 {
-                    hit.transform.GetComponent<PortalPath>().LoadPath();
+                    hit.transform.GetComponent<PortalBehaviour>().LoadPath(transform.parent);
                 }
                 else if (hit.transform.tag == "Shard")
                 {
